@@ -2129,7 +2129,7 @@ TabIndexes::Refresh(IndexInfo *indexInfo)
 		indcolsstr.AddSprintf("%s%s%s", m_backtick, tmpstr.GetString(), m_backtick);
 		if (indcol->m_lenth != -1)
 			indcolsstr.AddSprintf("(%d)", indcol->m_lenth);
-		indcolsstr.AddSprintf("%s", indcol->m_order);
+		indcolsstr.AddSprintf("%s", indcol->m_order.GetString());
 		indcolsstr.Add(", ");
 
 		indcol = (IndexColumn*)indcol->m_next;
@@ -3470,7 +3470,7 @@ TabIndexes::HandleIndexesOnDatatypeChange(IndexesStructWrapper* indexwrap, Field
 
         if(iindcols->m_lenth != -1)
             indcolsstr.AddSprintf("(%d)", iindcols->m_lenth);
-		indcolsstr.AddSprintf(" %d", iindcols->m_order);
+		indcolsstr.AddSprintf(" %d", iindcols->m_order.GetString());
         indcolsstr.Add(", ");
 
         iindcols = (IndexColumn *)iindcols->m_next;
@@ -3525,7 +3525,7 @@ TabIndexes::HandleIndexesOnFieldRename(IndexesStructWrapper* indexwrap, FieldStr
             
         if(iindcols->m_lenth != -1)
             indcolsstr.AddSprintf("(%d)", iindcols->m_lenth);
-		indcolsstr.AddSprintf(" %s", iindcols->m_order);
+		indcolsstr.AddSprintf(" %s", iindcols->m_order.GetString());
         indcolsstr.Add(", ");
 
         iindcols = (IndexColumn *)iindcols->m_next;
@@ -3595,7 +3595,7 @@ TabIndexes::HandleIndexesOnFieldDelete(IndexesStructWrapper* indexwrap, FieldStr
             
             if(iindcols->m_lenth != -1)
                 indcolsstr.AddSprintf("(%d)", iindcols->m_lenth);
-			indcolsstr.AddSprintf("%s", iindcols->m_order);
+			indcolsstr.AddSprintf("%s", iindcols->m_order.GetString());
             indcolsstr.Add(", ");
 
             iindcols = (IndexColumn *)iindcols->m_next;
