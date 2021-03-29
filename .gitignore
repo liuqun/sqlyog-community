@@ -1,0 +1,14 @@
+bin
+build/x64
+build/Win32
+*.log
+*.suo
+*.FileListAbsolute.txt
+packages.config
+*.ipch
+SQLyog.res
+*.idb
+*.pdb
+VersionInfo.res
+*.obj
+*.swp
